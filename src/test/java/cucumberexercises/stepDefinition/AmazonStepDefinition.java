@@ -6,6 +6,7 @@ import cucumberexercises.utilities.ReusableMethods;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 
@@ -31,4 +32,26 @@ public class AmazonStepDefinition {
     }
 
 
+    @And("sayfayi yeniler")
+    public void sayfayiYeniler() {
+        ReusableMethods.wait(2);
+        Driver.getDriver().navigate().refresh();
+    }
+
+    @And("basligin iphone icerdigini test eder")
+    public void basliginIphoneIcerdiginiTestEder() {
+        Assert.assertTrue(Driver.getDriver().getTitle().contains("iphone"));
+    }
+
+    @And("kullanici aramaKutusunda samsung aratir")
+    public void kullaniciAramaKutusundaSamsungAratir() {
+        Driver.getDriver().findElement(By.id("twotabsearchtextbox"))
+                .sendKeys("samsung", Keys.ENTER);
+        ReusableMethods.wait(1);
+    }
+
+    @And("basligin samsung icerdigini test eder")
+    public void basliginSamsungIcerdiginiTestEder() {
+        Assert.assertTrue(Driver.getDriver().getTitle().contains("samsung"));
+    }
 }
