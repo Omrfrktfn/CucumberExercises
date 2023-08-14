@@ -16,3 +16,12 @@ Feature: US004 TechProEducation Arama Testi
     And sayfa basliginin Mobile icerdigni test eder
     And sayfayi kapatir.
 
+
+  Scenario: TC04 Sayfada Arama yapar
+    Given kullanici "https://google.com" sayfasina gider.
+
+  Scenario: TC05 Sayfada Arama yapar
+    Given kullanici "https://youtube.com" sayfasina gider.
+
+  Scenario: TC06 Sayfada Arama yapar
+    Given kullanici "https://youtube.com" sayfasina gider.
